@@ -1,0 +1,12 @@
+- How to upload the assignment : 
+	
+	Push the folder that containsn the two assignments to github 
+	copy the link of the repo and paste it in the BODY OF THE EMAIL 
+	SEND TO ME JUST ONE EMAIL WITHE SUBJECT [Your NAME - Friday- assignment4]
+	Send the repo link to (mahmoudashraf.route@gmail.com) by your register email in route
+
+
+	Hint: Pleases do not put the link of the repo in the email subject 
+	      please do not upload the .java file in the mail i need just the repo 
+	      please send the mail with the email you register with in Route system 
+	      If You have any problem please contanct me 
