@@ -4,12 +4,11 @@ public class CurrentAccount extends Account {
 
     public CurrentAccount(String accountNumber, String customerId, double balance, double overdraftLimit) {
         super(accountNumber, customerId, balance);
-        this.overdraftLimit = overdraftLimit;
     }
 
     @Override
     public boolean withdraw(double amount) {
-        if (!getStatus().equalsIgnoreCase("ACTIVE")) {
+        if (getStatus() != AccountStatus.ACTIVE) {
             System.out.println("Error: Account is " + getStatus());
             return false;
         }

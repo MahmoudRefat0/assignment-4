@@ -3,7 +3,7 @@ public class Account {
     private String accountNumber;
     private String customerId;
     private double balance;
-    private String status; // ACTIVE, FROZEN, CLOSED
+    private AccountStatus status; // ACTIVE, FROZEN, CLOSED
     private int transactionCount;
 
     // constructor
@@ -11,7 +11,7 @@ public class Account {
         this.accountNumber = accountNumber;
         this.customerId = customerId;
         this.balance = balance;
-        this.status = "ACTIVE";
+        this.status = AccountStatus.ACTIVE;
         this.transactionCount = 0;
     }
 
@@ -32,11 +32,11 @@ public class Account {
         this.balance = balance;
     }
 
-    public String getStatus() {
+    public AccountStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(AccountStatus status) {
         this.status = status;
     }
 
@@ -46,7 +46,7 @@ public class Account {
 
     // deposit method
     public boolean deposit(double amount) {
-        if (!status.equalsIgnoreCase("ACTIVE")) {
+        if (status != AccountStatus.ACTIVE) {
             System.out.println("Error: Account is " + status);
             return false;
         }
@@ -61,7 +61,7 @@ public class Account {
 
     // basic withdraw method to be overridden
     public boolean withdraw(double amount) {
-        if (!status.equalsIgnoreCase("ACTIVE")) {
+        if (status != AccountStatus.ACTIVE) {
             System.out.println("Error: Account is " + status);
             return false;
         }

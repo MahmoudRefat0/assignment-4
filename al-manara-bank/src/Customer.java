@@ -4,11 +4,11 @@ public class Customer {
     private String fullName;
     private String nationalId;
     private String phone;
-    private String tier; // STANDARD, SILVER, GOLD
+    private CustomerTier tier; // STANDARD, SILVER, GOLD
     private int accountCount; // counter for customer accounts
 
     // constructor
-    public Customer(String customerId, String fullName, String nationalId, String phone, String tier) {
+    public Customer(String customerId, String fullName, String nationalId, String phone, CustomerTier tier) {
         this.customerId = customerId;
         this.fullName = fullName;
         this.nationalId = nationalId;
@@ -34,7 +34,7 @@ public class Customer {
         return phone;
     }
 
-    public String getTier() {
+    public CustomerTier getTier() {
         return tier;
     }
 

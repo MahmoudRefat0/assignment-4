@@ -120,9 +120,9 @@ public class Main {
         System.out.print("Enter Tier (1: STANDARD, 2: SILVER, 3: GOLD): ");
         int tierChoice = sc.nextInt();
         sc.nextLine();
-        String tier = "STANDARD";
-        if (tierChoice == 2) tier = "SILVER";
-        if (tierChoice == 3) tier = "GOLD";
+        CustomerTier tier = CustomerTier.STANDARD;
+        if (tierChoice == 2) tier = CustomerTier.SILVER;
+        if (tierChoice == 3) tier = CustomerTier.GOLD;
 
         String id = "C" + nextCustomerId++;
         Customer c = new Customer(id, name, nationalId, phone, tier);
@@ -341,7 +341,7 @@ public class Main {
             return;
         }
 
-        if (acc.getStatus().equalsIgnoreCase("CLOSED")) {
+        if (acc.getStatus() == AccountStatus.CLOSED) {
             System.out.println("Error: Account is already closed.");
             return;
         }
@@ -351,7 +351,7 @@ public class Main {
             return;
         }
 
-        acc.setStatus("CLOSED");
+        acc.setStatus(AccountStatus.CLOSED);
         Customer c = findCustomer(acc.getCustomerId());
         if (c != null) {
             c.decrementAccountCount();
